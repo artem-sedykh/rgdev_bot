@@ -1,0 +1,15 @@
+version: '3'
+services:
+  rgdev:
+    build: ./
+    container_name: rgdev
+    restart: always
+    volumes:
+      - "./sent.json:/app/sent.json" 
+    env_file: ./settings.env
+    environment:
+      - TZ=Europe/Moscow
+    logging:
+      driver: json-file
+      options:
+        max-size: 50m 
