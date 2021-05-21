@@ -12,6 +12,7 @@ namespace RgDevBot
             var config = new SentConfig(LogManager.GetCurrentClassLogger());
             var bot = new TelegramBot();
             var parser = new NewsParser(bot, config);
+
             while (true)
             {
                 try

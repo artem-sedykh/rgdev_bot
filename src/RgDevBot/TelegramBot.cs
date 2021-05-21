@@ -11,6 +11,7 @@ namespace RgDevBot
         public TelegramBot()
         {
             var token = Environment.GetEnvironmentVariable("TELEGRAM_TOKEN");
+
             if (string.IsNullOrEmpty(token))
             {
                 throw new Exception("Please define TELEGRAM_TOKEN variable.");

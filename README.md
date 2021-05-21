@@ -1,2 +1,2 @@
 # rgdev_bot
-Бот канала новостей RG Development
+Бот канала новостей absrealty
