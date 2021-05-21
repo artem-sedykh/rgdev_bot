@@ -103,15 +103,16 @@ namespace RgDevBot
                 var json = streamReader.ReadToEnd();
 
                 var root = JsonConvert.DeserializeObject<Root>(json);
-
-                return (root?.data.allPosts.totalCount).GetValueOrDefault();
+                var totalPages = (root?.data.allPosts.totalCount).GetValueOrDefault();
+                Console.WriteLine($"[{DateTime.Now}] Всего {totalPages} новостей.");
+                return totalPages;
             }
         }
 
         public static string Base64Encode(string plainText)
         {
             var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
-            return System.Convert.ToBase64String(plainTextBytes);
+            return Convert.ToBase64String(plainTextBytes);
         }
     }
 }
