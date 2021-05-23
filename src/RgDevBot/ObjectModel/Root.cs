@@ -38,9 +38,6 @@ namespace RgDevBot.ObjectModel
                     return $"https://www.absrealty.ru/news/{slug}/";
                 case NewsSource.uk_kc:
                 {
-                    if (Uri.TryCreate(slug, UriKind.Absolute, out _)) 
-                        return slug;
-
                     var url = (new Uri(UKKCBaseUri, slug)).ToString();
                     if (url.EndsWith("/") == false)
                         url += "/";
@@ -56,7 +53,7 @@ namespace RgDevBot.ObjectModel
 
         public string GetText()
         {
-            return $"{type.ToString()}: {title}:\r\n{GetUrl()}";
+            return $"*{type}:* {title}:\r\n{GetUrl()}";
         }
     }
 
